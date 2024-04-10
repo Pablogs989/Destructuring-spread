@@ -102,3 +102,47 @@ const array1 = [1, 2, 3, 4, 5];
 const array2 = [6, 7, 8, 9, 10];
 console.log(combineTwoArrays(array1, array2));
 
+
+//Extra
+
+const HIGH_TEMPERATURES = {
+    yesterday: 30,
+    today: 35,
+    tomorrow: 32,
+};
+
+const { today: maximaHoy } = HIGH_TEMPERATURES;
+const { tomorrow: maximaManana } = HIGH_TEMPERATURES;
+console.log(maximaHoy)
+console.log(maximaManana)
+
+
+const onlyUniques = (...datos) => {
+    const unicos = [];
+    datos.forEach(dato => {
+        if (!unicos.includes(dato)) {
+            unicos.push(dato);
+        }
+    });
+    return unicos;
+}
+
+console.log(onlyUniques('gato', 'pollo', 'cerdo', 'cerdo'));
+console.log(onlyUniques(1, 1, 2, 2, 3, 6, 7, 8));
+
+function combineAllArrays(...arrays) {
+    return arrays.reduce((combinedArray, currentArray) => {
+        return combinedArray.concat(currentArray);
+    }, []);
+}
+
+console.log(combineAllArrays([3, 6, 7, 8], [2, 7, 3, 1]));
+console.log(combineAllArrays([2, 7, 3, 1],[2, 7, 4, 12],[2, 44, 22, 7, 3, 1]));
+
+function sumAndSquare(...args) {
+    return args.reduce((total, num) => {
+        return total + (num ** 2);
+    }, 0);
+}
+
+console.log(sumAndSquare(2,4,6,8));
